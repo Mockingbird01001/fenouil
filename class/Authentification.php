@@ -3,8 +3,8 @@
 /**
  * @Author: Yacine Boufala
  * @Date:   2021-02-10 16:54:14
- * @Last Modified by:   root
- * @Last Modified time: 2021-02-10 16:58:50
+ * @Last Modified by:   Mockingbird01001
+ * @Last Modified time: 2021-03-07 02:46:52
  */
 class Authentification {
 	
@@ -17,6 +17,5 @@ class Authentification {
 		$this->options = array_merge($this->options, $options);
 		$this->session = $session;
 	}
-
 
 }

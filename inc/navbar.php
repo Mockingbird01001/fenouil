@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @Author: Yacine Boufala
+ * @Date:   2021-03-07 02:35:08
+ * @Last Modified by:   Mockingbird01001
+ * @Last Modified time: 2021-03-07 02:46:24
+ */
+?>
+
 <!-- Logo -->
 		<div class="logo"> <a href="index.php"><img class="img-responsive" src="images/logo.png" alt="" ></a> </div>
 			<nav class="navbar ownmenu">
