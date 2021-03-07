@@ -3,8 +3,8 @@
 /**
  * @Author: Yacine Boufala
  * @Date:   2021-02-10 16:56:19
- * @Last Modified by:   root
- * @Last Modified time: 2021-02-10 16:58:42
+ * @Last Modified by:   Mockingbird01001
+ * @Last Modified time: 2021-03-07 03:04:20
  */
 
 class App{
@@ -13,7 +13,7 @@ class App{
 
     static function getDatabase(){
         if(!self::$db){
-            self::$db = new Database('root', '', 'fenouille-bdd');
+            self::$db = new Database('root', '', 'fenouil_database');
         }
         return self::$db;
     }

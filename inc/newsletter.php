@@ -4,7 +4,7 @@
  * @Author: Yacine Boufala
  * @Date:   2021-03-07 02:05:53
  * @Last Modified by:   Mockingbird01001
- * @Last Modified time: 2021-03-07 02:46:18
+ * @Last Modified time: 2021-03-07 04:28:35
  */
 
 ?>
@@ -15,7 +15,7 @@
 					<h4>NEWSLETTER</h4>
 					<span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
 				<form>
-					<input type="email" placeholder="Enter your email address" required>
+					<input type="email" placeholder="Enter your email address">
 					<button type="submit">SEND ME</button>
 				</form>
 			</div>

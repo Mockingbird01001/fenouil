@@ -74,6 +74,10 @@
                       <div class="checkbox margin-0 margin-top-20 text-right">
                         <a href="#.">Forget Password</a>
                       </div>
+
+                      <div class="checkbox margin-0 margin-top-20 text-right">
+                        <a href="register.php">I don't have an account</a>
+                      </div>
                     </li>
                   </ul>
                 </form>

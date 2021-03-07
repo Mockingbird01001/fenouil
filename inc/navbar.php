@@ -4,7 +4,7 @@
  * @Author: Yacine Boufala
  * @Date:   2021-03-07 02:35:08
  * @Last Modified by:   Mockingbird01001
- * @Last Modified time: 2021-03-07 02:46:24
+ * @Last Modified time: 2021-03-07 04:27:50
  */
 ?>
 
@@ -116,12 +116,8 @@
 						<!-- USER INFO -->
 						<li class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="icon-user"></i> </a>
 							<ul class="dropdown-menu">
-								<li>
-									<h6>HELLO! Jhon Smith</h6>
-								</li>
-								<li><a href="#">MY CART</a></li>
-								<li><a href="#">ACCOUNT INFO</a></li>
-								<li><a href="#">LOG OUT</a></li>
+								<li><a href="register.php">REGISTER</a></li>
+								<li><a href="login.php">LOGIN</a></li>
 							</ul>
 						</li>
 							
