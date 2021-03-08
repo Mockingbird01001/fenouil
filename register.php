@@ -26,11 +26,11 @@
 		$validator->isConfirmed('password', 'Mot de passe invalide ou identique !');
 		$validator->isSized('addresse', 10, 250, 'Addresse trop courte !', 'Addresse trop longe!');
 		$validator->isSized('town', 3, 50, 'Town trop courte !', 'Town trop longe!');
+		$validator->isSized('town', 3, 50, 'Town trop courte !', 'Town trop longe!');
 		
-		// $validator->isChecked('agree-term', 'Veuillez accepter les conditions d"utilisations');
+		$validator->isChecked('agree-term', 'Veuillez accepter les conditions d"utilisations');
 
 		if($validator->isValid()){
-
 			App::getAuth()->register(
 				$db, 
 				ucfirst(htmlspecialchars($_POST['firstName'])),
@@ -39,7 +39,8 @@
 				htmlspecialchars($_POST['phone']),
 				htmlspecialchars($_POST['password']),
 				htmlspecialchars($_POST['addresse']),
-				htmlspecialchars($_POST['town'])
+				htmlspecialchars($_POST['town']),
+				htmlspecialchars($_POST['country'])
 			);
 
 			$session = Session::getInstance();
@@ -102,54 +103,54 @@
 										<!-- Name -->
 										<li class="col-md-6">
 											<label> *FIRST NAME
-												<input type="text" name="firstName" value="lorem" placeholder="First Name" required>
+												<input type="text" name="firstName" placeholder="First Name" required>
 											</label>
 										</li>
 										<!-- LAST NAME -->
 										<li class="col-md-6">
 											<label> *LAST NAME
-												<input type="text" name="lastName" value="lorem" placeholder="Last Name" required>
+												<input type="text" name="lastName" placeholder="Last Name" required>
 											</label>
 										</li>
 										
 										<!-- EMAIL ADDRESSe -->
 										<li class="col-md-6">
 											<label> *EMAIL ADDRESSe
-												<input type="email" name="email" value="by33015105@gmail.com" placeholder="Email addresse" required>
+												<input type="email" name="email" placeholder="Email addresse" required>
 											</label>
 										</li>
 										<!-- PHONE -->
 										<li class="col-md-6">
 											<label> *PHONE
-												<input type="phone" name="phone" value="0663333310" placeholder="Phone" required>
+												<input type="phone" name="phone" placeholder="Phone" required>
 											</label>
 										</li>
 										
 										<!-- password -->
 										<li class="col-md-6">
 											<label> *password
-												<input type="password" name="password" value="lorem" placeholder="password" required>
+												<input type="password" name="password" placeholder="password" required>
 											</label>
 										</li>
 										
 										<!-- password -->
 										<li class="col-md-6">
 											<label> *password
-												<input type="password" name="password_confirm" value="lorem" placeholder="confirm your password" required>
+												<input type="password" name="password_confirm" placeholder="confirm your password" required>
 											</label>
 										</li>
 
 										<li class="col-md-6"> 
 											<!-- ADDRESSe -->
 											<label>*ADDRESSe
-												<input type="text" name="addresse" value="6B Rue de l'Orge" placeholder="Addresse" required>
+												<input type="text" name="addresse" placeholder="Addresse" required>
 											</label>
 										</li>
 										
 										<!-- COUNTRY -->
 										<li class="col-md-6">
 											<label> *COUNTRY
-												<select class="selectpicker" name="contry-name">
+												<select class="selectpicker" name="country">
 													<option>Select You Country</option>
 													<option id="country-country">Lorem</option>
 												</select>
@@ -159,9 +160,16 @@
 										<!-- TOWN/CITY -->
 										<li class="col-md-6">
 											<label>*TOWN/CITY
-												<input type="text" name="town" value="lorem" placeholder="TOWN/CITY" required>
+												<input type="text" name="town" placeholder="TOWN/CITY" required>
 											</label>
 										</li>
+
+										<li class="col-md-12">
+					                      <div class="checkbox margin-0 margin-top-20">
+					                        <input id="checkbox1" name="agree-term" class="styled" type="checkbox">
+					                        <label for="checkbox1">I agree <a href="conditions.html">conditions</a></label>
+					                      </div>
+					                    </li>
 
 										<li class="col-md-12">
 											<button type="submit" class="btn">REGISTER NOW</button>

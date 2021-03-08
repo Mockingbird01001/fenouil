@@ -4,7 +4,7 @@
  * @Author: Yacine Boufala
  * @Date:   2021-02-10 16:54:14
  * @Last Modified by:   Mockingbird01001
- * @Last Modified time: 2021-03-07 04:52:57
+ * @Last Modified time: 2021-03-09 00:16:30
  */
 
 class Auth {
@@ -17,13 +17,15 @@ class Auth {
 		$this->session = $session;
 	}
 
-	public function register($db, $firstName, $lastName, $email, $phone, $password, $adresse, $town){
-		$password = $this->hashPassword($password);
-		$ConfirmationToken = Str::random(250);
-		$db->query("INSERT INTO users SET firstName=?, lastName=?, email=?, phone=?, password=?, adresse=?, town=?, cryptoCode=?, cryptoEmail=?, remember_token=?, confirmation_token=?", 
-			[$firstName, $lastName, $email, $password, $adresse, $town, Str::random(100), Str::random(50), null, $ConfirmationToken]
+	private function hashPassword($password){
+		return password_hash($password, PASSWORD_BCRYPT);
+	}
+
+	public function register($db, $firstName, $lastName, $email, $phone, $password, $adresse, $town, $country){
+		return $db->query("INSERT INTO users SET firstName=?, lastName=?, email=?, phone=?, password=?, adresse=?, town=?, country=?, cryptoCode=?, remember_token=?, confirmation_token=?", 
+			[$firstName, $lastName, $email,$phone, $this->hashPassword($password), $adresse, $town, $country,Str::random(100), null, 
+			 Str::random(250)]
 		);
-		// $user_id = $db->lastInsertId();
 	}
 
 	public function confirm($db, $user_id, $token){
@@ -45,9 +47,7 @@ class Auth {
 	}
 
 	public function user(){
-		if(!$this->session->read('auth')){
-			return false;
-		}
+		if(!$this->session->read('auth')){return false;}
 		return $this->session->read('auth');
 	}
 
@@ -81,20 +81,16 @@ class Auth {
 		if($user){
 			if(password_verify($password, $user->password)){
 				$this->connect($user);
-				if($remember) $this->remember($db, $user->id) ; 
+				if($remember) $this->remember($db, $user->id); 
 				return $user;
-			}else{
-				return false;
-			}
-		}else{
-			return false;
-		}
+			}else{return false;}
+		}else{return false;}
 	}
 
 	public function remember($db, $user_id){
 		$remember_token = Str::random(250);
 		$db->query('UPDATE users SET remember_token = ? WHERE id = ?', [$remember_token, $user_id]);
-		setcookie('remember', $user_id . '==' . $remember_token . sha1($user_id . 'Mockingbird050'), 0);
+		setcookie('remember', $user_id . '==' . $remember_token . sha1($user_id . 'Mockingbird01001'), 0);
 
 	}
 

@@ -1,11 +1,22 @@
 <?php 
+  require_once 'inc/auto_Include.php';
+  require_once 'inc/functions.php';
+
   $title = "Fenouil" ;
   $function = "Store";
+
+  $errors = array();
+
+  $validator = new Validator($_POST);
+  $auth = App::getAuth();
+  $db = App::getDatabase();
+  $auth->connectFromCookie($db);
+
 
   require_once 'inc/header.php';
   require_once 'inc/navbar.php';
 ?>
-  
+  <?php require_once 'inc/pop-up.php'; ?>
   <!--======= SUB BANNER =========-->
   <section class="sub-bnr" data-stellar-background-ratio="0.5">
     <div class="position-center-center">

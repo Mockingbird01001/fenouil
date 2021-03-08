@@ -4,7 +4,7 @@
  * @Author: Yacine Boufala
  * @Date:   2021-03-07 02:35:08
  * @Last Modified by:   Mockingbird01001
- * @Last Modified time: 2021-03-07 04:27:50
+ * @Last Modified time: 2021-03-09 00:00:19
  */
 ?>
 
@@ -19,7 +19,7 @@
 				<div class="collapse navbar-collapse" id="nav-open-btn">
 					<ul class="nav">
 						<li class="dropdown active"> <a href="index.php">Home</a></li>
-						<li class="dropdown"> <a href="shop.php">Pages</a></li>
+						<li class="dropdown"> <a href="shop.php">Shop</a></li>
 						<li> <a href="about-us.php">About </a> </li>
 						
 						<!-- Two Link Option -->
